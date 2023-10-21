@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KCCA FC Info</title>
+
+    <!-- Include Bootstrap CSS from a CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: yellow;">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 id="movingWords" class="display-3 text-primary">KCCA FC - Football Excellence!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button id="infoButton" class="btn btn-primary btn-lg">Click for KCCA FC Info</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog" class="container mt-5">
+        <p id="infoText" class="info-paragraph"></p>
+    </div>
+
+    <script>
+        // JavaScript code to show the dialog content as if it's being typed
+        document.getElementById('infoButton').addEventListener('click', function(event) {
+            const infoText = "Kampala Capital City Authority Football Club (KCCA FC) was founded in 1963. The club has a rich history of achievements, including: 13 Uganda Premier League titles (First win: 1976, Last win: 2019), 8 Uganda Cup victories. The club plays its home matches at the Philip Omondi Stadium.";
+
+            const infoParagraph = document.getElementById('infoText');
+            infoParagraph.innerHTML = ''; // Clear the content
+
+            function typeContent(index) {
+                if (index < infoText.length) {
+                    infoParagraph.innerHTML += infoText.charAt(index);
+                    index++;
+                    setTimeout(function () {
+                        typeContent(index);
+                    }, 50); // Adjust the typing speed (milliseconds)
+                }
+            }
+
+            typeContent(0);
+        });
+    </script>
+
+    <!-- Include Bootstrap JS and Popper.js from a CDN (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
